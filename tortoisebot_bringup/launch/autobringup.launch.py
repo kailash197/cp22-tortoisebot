@@ -25,7 +25,7 @@ def generate_launch_description():
         'tortoisebot_bringup'), 'maps','room2.yaml')
   use_sim_time=LaunchConfiguration('use_sim_time')
   exploration=LaunchConfiguration('exploration')   
-  default_rviz_config_path = os.path.join(get_package_share_directory('tortoisebot_description'), 'rviz/tortoisebot_sensor_display.rviz')
+  default_rviz_config_path = os.path.join(get_package_share_directory('tortoisebot_description'), 'rviz/tortoisebot_navigation.rviz')
    
   
   rviz_node = launch_ros.actions.Node(
@@ -35,7 +35,7 @@ def generate_launch_description():
         output='screen',
         arguments=['-d', LaunchConfiguration('rvizconfig')],
         parameters= [{'use_sim_time': use_sim_time}],
-
+        condition=IfCondition(use_sim_time),
     )
   state_publisher_launch_cmd=IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -124,15 +124,15 @@ def generate_launch_description():
                     {'node_names': ['map_server']}]),
 
     rviz_node,
-    state_publisher_launch_cmd,
-    robot_state_publisher_node,
-    joint_state_publisher_node,
-    ydlidar_launch_cmd,
-    differential_drive_node,
+    # state_publisher_launch_cmd,
+    # robot_state_publisher_node,
+    # joint_state_publisher_node,
+    # ydlidar_launch_cmd,
+    # differential_drive_node,
     # gazebo_launch_cmd,
-    navigation_launch_cmd, 
+    # navigation_launch_cmd, 
     cartographer_launch_cmd,  
-    camera_node
+    # camera_node
 
   ]
 )
