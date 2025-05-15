@@ -6,7 +6,7 @@ Panels:
       Expanded:
         - /Image1/Topic1
       Splitter Ratio: 0.5
-    Tree Height: 584
+    Tree Height: 448
 Visualization Manager:
   Class: ""
   Displays:
@@ -41,7 +41,8 @@ Visualization Manager:
         Value: /robot_description
       Enabled: true
       Links:
-        All Links Enabled: true
+        All Links Enabled:
+          {}
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
@@ -50,22 +51,18 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         camera_holder:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         camera_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         castor_wheel:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         imu_link:
           Alpha: 1
           Show Axes: false
@@ -74,17 +71,14 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         wheel_left:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         wheel_right:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
       Name: RobotModel
       TF Prefix: ""
       Update Interval: 0
@@ -104,6 +98,8 @@ Visualization Manager:
         castor_wheel:
           Value: true
         imu_link:
+          Value: true
+        laser_frame:
           Value: true
         lidar:
           Value: true
@@ -131,6 +127,8 @@ Visualization Manager:
                 {}
               imu_link:
                 {}
+              laser_frame:
+                {}
               lidar:
                 {}
               wheel_left:
@@ -154,9 +152,9 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 0
+      Max Intensity: 1016
       Min Color: 0; 0; 0
-      Min Intensity: 0
+      Min Intensity: 1008
       Name: LaserScan
       Position Transformer: XYZ
       Selectable: true
@@ -278,7 +276,7 @@ Visualization Manager:
         Value: /local_costmap/published_footprint
       Value: true
     - Class: rviz_default_plugins/Image
-      Enabled: true
+      Enabled: false
       Max Value: 1
       Median window: 5
       Min Value: 0
@@ -288,9 +286,9 @@ Visualization Manager:
         Depth: 5
         Durability Policy: Volatile
         History Policy: Keep Last
-        Reliability Policy: Best Effort
-        Value: /raspberrypi_camera/image_raw
-      Value: true
+        Reliability Policy: Reliable
+        Value: /image_raw
+      Value: false
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -329,35 +327,35 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 15.790414810180664
+      Distance: 5.915294170379639
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.5965061187744141
-        Y: -0.10617119073867798
-        Z: 0.5435945391654968
+        X: -0.6705943942070007
+        Y: -1.7902801036834717
+        Z: -0.6441099643707275
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.859798014163971
+      Pitch: 0.9397979378700256
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.213593482971191
+      Yaw: 4.363593101501465
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 1016
+  Height: 671
   Hide Left Dock: false
   Hide Right Dock: false
   Image:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd000000010000000000000217000003a2fc0200000008fb000000100044006900730070006c006100790073010000003b000002d1000000c700fffffffb0000000a0049006d0061006700650100000369000000740000000000000000fb0000000a0049006d0061006700650100000194000001760000000000000000fb0000000a0049006d00610067006501000002d00000010b0000000000000000fb0000000c00430061006d00650072006100000002ba000001210000000000000000fb0000000a0049006d00610067006501000002eb000000f00000000000000000fb0000000a0049006d0061006700650100000312000000cb0000000000000000fb0000000a0049006d0061006700650100000312000000cb0000002800ffffff0000051d000003a200000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
-  Width: 1850
-  X: 70
-  Y: 27
+  QMainWindow State: 000000ff00000000fd00000001000000000000015600000249fc0200000009fb000000100044006900730070006c006100790073010000003b00000249000000c700fffffffb0000000a0049006d00610067006500000001b6000000ce0000000000000000fb0000000a0049006d0061006700650100000194000001760000000000000000fb0000000a0049006d00610067006501000002d00000010b0000000000000000fb0000000c00430061006d00650072006100000002ba000001210000000000000000fb0000000a0049006d00610067006501000002eb000000f00000000000000000fb0000000a0049006d0061006700650100000312000000cb0000000000000000fb0000000a0049006d0061006700650100000312000000cb0000000000000000fb0000000a0049006d00610067006500000001d1000000b30000002800ffffff000003a40000024900000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Width: 1280
+  X: 0
+  Y: 0
